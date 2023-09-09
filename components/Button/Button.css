@@ -12,14 +12,31 @@
   outline-color: transparent;
   outline-offset: 0.0625rem;
   appearance: none;
-  transition: background-color 120ms ease-in-out,
-    outline-color 120ms ease-in-out;
+  transition: background-color 140ms ease-in-out, outline-color 80ms ease-in-out,
+    transform 80ms ease-in-out;
 }
 
 .btn:hover {
   background-color: hsl(167, 92%, 27%);
+  transform: scale(1.03);
+}
+
+.btn:active {
+  transform: scale(1);
 }
 
 .btn:focus-visible {
   outline: 0.125rem solid hsl(167, 92%, 27%);
+}
+
+.btn.btn--clicked {
+  background-color: hsl(332, 83%, 42%);
+}
+
+.btn.btn--clicked:hover {
+  background-color: hsl(332, 83%, 37%);
+}
+
+.btn.btn--clicked:focus-visible {
+  outline-color: hsl(332, 83%, 37%);
 }

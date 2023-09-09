@@ -72,3 +72,8 @@ h1 {
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }
+
+.item {
+  border: 0.125rem dashed hsl(210, 17%, 98%);
+  padding: 1rem;
+}

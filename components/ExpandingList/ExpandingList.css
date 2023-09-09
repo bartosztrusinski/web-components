@@ -1,0 +1,21 @@
+.expanding-list,
+.expanding-list ul {
+  list-style-type: '🛸';
+}
+
+.expandable {
+  list-style-type: '👇🏻';
+  cursor: pointer;
+}
+
+.expandable.closed {
+  list-style-type: '👉🏻';
+}
+
+.expandable ul {
+  cursor: initial;
+}
+
+.expandable.closed ul {
+  display: none;
+}

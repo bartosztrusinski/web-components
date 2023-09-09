@@ -9,6 +9,18 @@ class StyledButton extends HTMLButtonElement {
     this.appendChild(linkElem);
     this.classList.add('btn');
   }
+
+  connectedCallback() {
+    this.addEventListener('click', this.handleClick);
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this.handleClick);
+  }
+
+  handleClick() {
+    this.classList.toggle('btn--clicked');
+  }
 }
 
 customElements.define('styled-btn', StyledButton, { extends: 'button' });

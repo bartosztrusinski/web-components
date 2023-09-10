@@ -6,6 +6,7 @@ class StyledButton extends HTMLButtonElement {
     linkElem.setAttribute('rel', 'stylesheet');
     linkElem.setAttribute('href', 'components/Button/Button.css');
 
+    this.setAttribute('type', this.getAttribute('type') || 'button');
     this.appendChild(linkElem);
     this.classList.add('btn');
   }

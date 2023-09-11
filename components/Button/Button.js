@@ -2,12 +2,12 @@ class StyledButton extends HTMLButtonElement {
   constructor() {
     super();
 
-    const linkElem = document.createElement('link');
-    linkElem.setAttribute('rel', 'stylesheet');
-    linkElem.setAttribute('href', 'components/Button/Button.css');
+    const linkElement = document.createElement('link');
+    linkElement.setAttribute('rel', 'stylesheet');
+    linkElement.setAttribute('href', 'components/Button/Button.css');
 
+    this.appendChild(linkElement);
     this.setAttribute('type', this.getAttribute('type') || 'button');
-    this.appendChild(linkElem);
     this.classList.add('btn');
   }
 

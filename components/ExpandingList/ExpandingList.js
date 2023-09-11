@@ -2,18 +2,21 @@ class ExpandingList extends HTMLUListElement {
   constructor() {
     super();
 
-    const linkElem = document.createElement('link');
-    linkElem.setAttribute('rel', 'stylesheet');
-    linkElem.setAttribute('href', 'components/ExpandingList/ExpandingList.css');
+    const linkElement = document.createElement('link');
+    linkElement.setAttribute('rel', 'stylesheet');
+    linkElement.setAttribute(
+      'href',
+      'components/ExpandingList/ExpandingList.css'
+    );
 
-    this.appendChild(linkElem);
+    this.appendChild(linkElement);
     this.classList.add('expanding-list');
   }
 
   connectedCallback() {
-    const lis = this.querySelectorAll('li');
+    const liElements = this.querySelectorAll('li');
 
-    lis.forEach((li) => {
+    liElements.forEach((li) => {
       li.classList.remove('expandable', 'closed');
       if (li.querySelector('ul')) {
         li.classList.add('expandable', 'closed');

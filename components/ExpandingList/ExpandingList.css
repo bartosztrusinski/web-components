@@ -1,6 +1,8 @@
 .expanding-list,
 .expanding-list ul {
   list-style-type: '🛸';
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .expandable {

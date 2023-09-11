@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
     <script defer src="components/Button/Button.js"></script>
     <script defer src="components/ExpandingList/ExpandingList.js"></script>
+    <script defer src="components/Card/Card.js"></script>
   </head>
   <body>
     <h1>Web Components</h1>
@@ -53,6 +54,65 @@
           </ul>
         </li>
       </ul>
+    </div>
+    <div class="item">
+      <h2>Automonous card using template & slot</h2>
+
+      <template id="card-template">
+        <link rel="stylesheet" href="components/Card/Card.css" />
+        <article class="card">
+          <slot name="card-image">
+            <img
+              src="components/Card/img/placeholder.PNG"
+              alt="card image placeholder" />
+          </slot>
+
+          <div class="body">
+            <heading class="heading">
+              <slot name="card-heading"><h3>Heading</h3></slot>
+            </heading>
+            <div class="description">
+              <slot name="card-description">
+                <p>This is a short description about the card.</p>
+              </slot>
+            </div>
+          </div>
+
+          <div class="actions">
+            <slot name="card-action">
+              <button type="button">Action</button>
+            </slot>
+          </div>
+        </article>
+      </template>
+
+      <div class="card-container">
+        <custom-card>
+          <img
+            slot="card-image"
+            src="components/Card/img/components.png"
+            alt="creating components" />
+          <h3 slot="card-heading">Custom Component</h3>
+          <p slot="card-description">
+            Card component made using template and slot elements with shadow DOM
+            and Web Components API.
+          </p>
+          <button slot="card-action" type="button">Show more</button>
+        </custom-card>
+        <custom-card>
+          <img
+            slot="card-image"
+            src="components/Card/img/skyline.jpg"
+            alt="nissan skyline on highway" />
+          <h3 slot="card-heading">Nissan Skyline R34 GTR</h3>
+          <p slot="card-description">
+            This car is considered an icon of the 90s and early 2000s. The R34
+            was the first Skyline to feature the legendary RB26DETT engine.
+            Combined with twin turbos and all wheel drive, this car is a beast.
+          </p>
+        </custom-card>
+        <custom-card></custom-card>
+      </div>
     </div>
   </body>
 </html>

@@ -60,30 +60,28 @@
 
       <template id="card-template">
         <link rel="stylesheet" href="components/Card/Card.css" />
-        <article class="card">
-          <slot name="card-image">
-            <img
-              src="components/Card/img/placeholder.PNG"
-              alt="card image placeholder" />
-          </slot>
+        <slot name="card-image">
+          <img
+            src="components/Card/img/placeholder.PNG"
+            alt="card image placeholder" />
+        </slot>
 
-          <div class="body">
-            <heading class="heading">
-              <slot name="card-heading"><h3>Heading</h3></slot>
-            </heading>
-            <div class="description">
-              <slot name="card-description">
-                <p>This is a short description about the card.</p>
-              </slot>
-            </div>
-          </div>
-
-          <div class="actions">
-            <slot name="card-action">
-              <button type="button">Action</button>
+        <div class="body">
+          <heading class="heading">
+            <slot name="card-heading"><h3>Heading</h3></slot>
+          </heading>
+          <div class="description">
+            <slot name="card-description">
+              <p>This is a short description about the card.</p>
             </slot>
           </div>
-        </article>
+        </div>
+
+        <div class="actions">
+          <slot name="card-action">
+            <button type="button">Action</button>
+          </slot>
+        </div>
       </template>
 
       <div class="card-container">
@@ -98,6 +96,7 @@
             and Web Components API.
           </p>
           <button slot="card-action" type="button">Show more</button>
+          <button slot="card-action" type="button">Click me</button>
         </custom-card>
         <custom-card>
           <img

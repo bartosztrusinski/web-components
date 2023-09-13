@@ -6,8 +6,8 @@
 }
 
 ::selection {
-  background-color: hsl(323, 80%, 43%);
-  color: hsl(210, 17%, 98%);
+  background-color: var(--color-selection);
+  color: var(--color-neutral-100);
 }
 
 :host {
@@ -15,11 +15,11 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: hsl(210, 17%, 98%);
+  background-color: var(--color-neutral-100);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 0.8rem;
   box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, 0.15);
-  padding: 0.6rem;
+  padding: 0.7rem;
 }
 
 img,
@@ -39,13 +39,13 @@ img,
 .heading {
   font-weight: bold;
   font-size: 1.3rem;
-  color: hsl(225, 6%, 13%);
+  color: var(--color-neutral-900);
 }
 
 .description {
   font-size: 1.1rem;
   font-weight: 300;
-  color: hsl(225, 6%, 30%);
+  color: var(--color-neutral-800);
 }
 
 .actions {
@@ -54,9 +54,8 @@ img,
   gap: 0.5rem;
 }
 
-.actions button,
-.actions ::slotted(button) {
-  width: 100%;
+button,
+::slotted(button) {
   padding: 0.8rem 0.5rem;
   border-radius: 0.8rem;
   background-color: hsl(219, 92%, 46%);
@@ -65,7 +64,7 @@ img,
     hsl(219, 92%, 42%),
     hsl(237, 64%, 63%)
   );
-  color: hsl(210, 17%, 98%);
+  color: var(--color-neutral-100);
   border: none;
   appearance: none;
   font-size: 1rem;
@@ -73,18 +72,18 @@ img,
   transition: background-color 200ms ease-in-out;
 }
 
-.actions button:hover,
-.actions ::slotted(button):hover {
+button:hover,
+::slotted(button):hover {
+  background-color: hsl(219, 92%, 42%);
   background-image: linear-gradient(
     to right,
     hsl(219, 91%, 37%),
     hsl(237, 52%, 55%)
   );
-  background-color: hsl(219, 92%, 42%);
 }
 
-.actions button:focus-visible,
-.actions ::slotted(button):focus-visible {
+button:focus-visible,
+::slotted(button):focus-visible {
   outline: 0.125rem solid hsl(219, 92%, 42%);
   outline-offset: 0.0625rem;
 }

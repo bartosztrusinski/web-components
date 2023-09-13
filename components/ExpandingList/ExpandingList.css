@@ -1,17 +1,27 @@
-.expanding-list,
-.expanding-list ul {
-  list-style-type: '🛸';
+.expanding-list {
   font-size: 1.2rem;
   font-weight: 500;
+  width: fit-content;
+  margin-inline: 1rem;
+}
+
+.expanding-list,
+.expanding-list ul {
+  list-style-type: '{🛸} ';
+}
+
+.expanding-list li::marker {
+  font-size: 1.1em;
+  color: var(--li-color, --color-neutral-100);
 }
 
 .expandable {
-  list-style-type: '👇🏻';
+  list-style-type: '{👇🏻} ';
   cursor: pointer;
 }
 
 .expandable.closed {
-  list-style-type: '👉🏻';
+  list-style-type: '{👉🏻} ';
 }
 
 .expandable ul {

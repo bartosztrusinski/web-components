@@ -44,23 +44,32 @@ h6 {
   isolation: isolate;
 }
 
+:root {
+  --color-neutral-100: hsl(210, 17%, 98%);
+  --color-neutral-200: hsl(210, 16%, 88%);
+  --color-neutral-800: hsl(225, 6%, 23%);
+  --color-neutral-900: hsl(225, 6%, 13%);
+
+  --color-selection: hsl(323, 80%, 43%);
+}
+
 body {
-  background-color: hsl(225, 6%, 13%);
-  color: hsl(210, 17%, 98%);
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-100);
   font-family: Arial, Helvetica, sans-serif;
-  padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
+  padding: 1rem;
 }
 
 h1 {
   width: fit-content;
   font-size: min(12vw, 3rem);
   font-weight: 900;
-  background-color: hsl(210, 17%, 98%);
+  background-color: var(--color-neutral-100);
   background-image: linear-gradient(
-    45deg,
+    to right,
     hsl(256, 100%, 51%),
     hsl(340, 100%, 50%)
   );
@@ -74,12 +83,12 @@ h1 {
 }
 
 :not(h1)::selection {
-  background-color: hsl(323, 80%, 43%);
-  color: hsl(210, 17%, 98%);
+  background-color: var(--color-selection);
+  color: var(--color-neutral-100);
 }
 
 .item {
-  border: 0.125rem dashed hsl(210, 17%, 98%);
+  border: 0.125rem dashed var(--color-neutral-100);
   padding: 0.5rem 1rem 1rem;
 }
 
@@ -94,5 +103,5 @@ h1 {
   gap: 1rem;
   border-radius: 0.5rem;
   padding: 1rem;
-  background-color: hsl(0, 0%, 85%);
+  background-color: var(--color-neutral-200);
 }

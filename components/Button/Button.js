@@ -8,7 +8,7 @@ class StyledButton extends HTMLButtonElement {
 
     this.appendChild(linkElement);
     this.setAttribute('type', this.getAttribute('type') || 'button');
-    this.classList.add('btn');
+    this.classList.add('btn', 'btn--primary');
   }
 
   connectedCallback() {
@@ -20,7 +20,8 @@ class StyledButton extends HTMLButtonElement {
   }
 
   handleClick() {
-    this.classList.toggle('btn--clicked');
+    this.classList.toggle('btn--primary');
+    this.classList.toggle('btn--secondary');
   }
 }
 

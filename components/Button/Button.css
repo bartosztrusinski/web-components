@@ -1,6 +1,11 @@
 .btn {
-  background-color: hsl(167, 92%, 32%);
-  color: hsl(168, 100%, 95%);
+  --btn-primary-100: hsl(167, 92%, 32%);
+  --btn-primary-200: hsl(167, 92%, 27%);
+  --btn-secondary-100: hsl(332, 83%, 42%);
+  --btn-secondary-200: hsl(332, 83%, 37%);
+
+  background-color: var(--btn-color-100, dodgerblue);
+  color: var(--color-neutral-100);
   padding: 0.5rem 1rem;
   font-weight: 600;
   font-size: 1rem;
@@ -12,12 +17,22 @@
   outline-color: transparent;
   outline-offset: 0.0625rem;
   appearance: none;
-  transition: background-color 140ms ease-in-out, outline-color 80ms ease-in-out,
+  transition: background-color 180ms ease-in-out, outline-color 80ms ease-in-out,
     transform 80ms ease-in-out;
 }
 
+.btn.btn--primary {
+  --btn-color-100: var(--btn-primary-100);
+  --btn-color-200: var(--btn-primary-200);
+}
+
+.btn.btn--secondary {
+  --btn-color-100: var(--btn-secondary-100);
+  --btn-color-200: var(--btn-secondary-200);
+}
+
 .btn:hover {
-  background-color: hsl(167, 92%, 27%);
+  background-color: var(--btn-color-200, royalblue);
   transform: scale(1.03);
 }
 
@@ -26,17 +41,5 @@
 }
 
 .btn:focus-visible {
-  outline: 0.125rem solid hsl(167, 92%, 27%);
-}
-
-.btn.btn--clicked {
-  background-color: hsl(332, 83%, 42%);
-}
-
-.btn.btn--clicked:hover {
-  background-color: hsl(332, 83%, 37%);
-}
-
-.btn.btn--clicked:focus-visible {
-  outline-color: hsl(332, 83%, 37%);
+  outline: 0.125rem solid var(--btn-color-200, royalblue);
 }

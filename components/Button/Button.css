@@ -5,7 +5,7 @@
   --btn-secondary-200: hsl(332, 83%, 37%);
 
   background-color: var(--btn-color-100, dodgerblue);
-  color: var(--color-neutral-100);
+  color: var(--color-neutral-100, hsl(210, 17%, 98%));
   padding: 0.5rem 1rem;
   font-weight: 600;
   font-size: 1rem;

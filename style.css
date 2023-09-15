@@ -100,8 +100,15 @@ h1 {
   display: flex;
   flex-flow: row wrap;
   align-items: start;
+  justify-content: center;
   gap: 1rem;
   border-radius: 0.5rem;
   padding: 1rem;
   background-color: var(--color-neutral-200);
+}
+
+@media (min-width: 43.25rem) {
+  .card-container {
+    justify-content: start;
+  }
 }

@@ -16,18 +16,26 @@
   flex-direction: column;
   gap: 1rem;
   background-color: var(--color-neutral-100);
+  color: var(--color-neutral-900);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 0.8rem;
   box-shadow: 0 0.5rem 1rem hsla(0, 0%, 0%, 0.15);
-  padding: 0.7rem;
+  padding: 0.6875rem;
 }
 
-img,
-::slotted(img) {
-  width: 100%;
-  height: auto;
+.image svg {
+  height: 9rem;
+  padding-block: 1.75rem;
+  border-radius: 0.6875rem;
+  background-color: hsl(195, 97%, 69%);
+  stroke: hsl(195, 98%, 38%);
+  stroke-width: 1.2;
+  fill: none;
+}
+
+.image::slotted(img) {
   max-height: 12rem;
-  border-radius: 0.8rem;
+  border-radius: 0.6875rem;
   object-position: center;
   object-fit: contain;
 }
@@ -39,23 +47,22 @@ img,
 .heading {
   font-weight: bold;
   font-size: 1.3rem;
-  color: var(--color-neutral-900);
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: 1.0625rem;
   font-weight: 300;
   color: var(--color-neutral-800);
 }
 
-.actions {
+.action {
   display: flex;
   flex-flow: column wrap;
   gap: 0.5rem;
 }
 
-button,
-::slotted(button) {
+.action button,
+.action::slotted(button) {
   padding: 0.8rem 0.5rem;
   border-radius: 0.8rem;
   background-color: hsl(219, 92%, 46%);
@@ -69,11 +76,10 @@ button,
   appearance: none;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 200ms ease-in-out;
 }
 
-button:hover,
-::slotted(button):hover {
+.action button:hover,
+.action::slotted(button:hover) {
   background-color: hsl(219, 92%, 42%);
   background-image: linear-gradient(
     to right,
@@ -82,8 +88,8 @@ button:hover,
   );
 }
 
-button:focus-visible,
-::slotted(button):focus-visible {
+.action button:focus-visible,
+.action::slotted(button:focus-visible) {
   outline: 0.125rem solid hsl(219, 92%, 42%);
   outline-offset: 0.0625rem;
 }

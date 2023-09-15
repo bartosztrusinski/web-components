@@ -1,0 +1,35 @@
+.container {
+  background-color: var(--color-neutral-900, hsl(212, 16%, 18%));
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  line-height: 1.8;
+}
+
+.pill {
+  padding: 0.2rem 0.5rem;
+  border-radius: 10rem;
+  white-space: nowrap;
+}
+
+.year {
+  color: hsl(160, 100%, 38%);
+  background-color: hsl(160, 100%, 38%, 0.15);
+}
+
+.month {
+  color: hsl(49, 85%, 49%);
+  background-color: hsl(49, 85%, 49%, 0.15);
+}
+
+.day {
+  color: hsl(337, 69%, 56%);
+  background-color: hsl(337, 69%, 56%, 0.15);
+}
+
+.date {
+  font-size: 1.1em;
+  font-weight: bold;
+}

@@ -42,9 +42,25 @@ class DateAgo extends HTMLElement {
     this.attachShadow({ mode: 'open' });
   }
 
-  connectedCallback() {
-    const date = this.getAttribute('date');
+  get date() {
+    return this.getAttribute('date');
+  }
 
+  connectedCallback() {
+    this.render(this.date);
+  }
+
+  static get observedAttributes() {
+    return ['date'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (oldValue !== newValue) {
+      this.render(newValue);
+    }
+  }
+
+  render(date) {
     if (!date) {
       this.shadowRoot.innerHTML = `${prefix}⌚ No date provided.${suffix}`;
       return;

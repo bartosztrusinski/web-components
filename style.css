@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
 *,
 *::before,
 *::after {
@@ -49,7 +51,6 @@ h6 {
   --color-neutral-200: hsl(210, 16%, 88%);
   --color-neutral-800: hsl(225, 6%, 23%);
   --color-neutral-900: hsl(225, 6%, 13%);
-
   --color-selection: hsl(323, 80%, 43%);
 }
 
@@ -57,16 +58,19 @@ body {
   background-color: var(--color-neutral-900);
   color: var(--color-neutral-100);
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-  padding: 1rem;
 }
 
-h1 {
+.header {
+  padding: 1rem 1rem 0;
+}
+
+.header .heading {
   width: fit-content;
   font-size: min(12vw, 3rem);
-  font-weight: 900;
+  font-weight: bold;
+  font-family: 'Black Ops One', sans-serif;
+  line-height: 1;
+  padding-left: clamp(0rem, 1vw, 0.8rem);
   background-color: var(--color-neutral-100);
   background-image: linear-gradient(
     to right,
@@ -82,18 +86,9 @@ h1 {
   -moz-text-fill-color: transparent;
 }
 
-:not(h1)::selection {
+:not(.header .heading)::selection {
   background-color: var(--color-selection);
   color: var(--color-neutral-100);
-}
-
-.item {
-  border: 0.125rem dashed var(--color-neutral-100);
-  padding: 0.5rem 1rem 1rem;
-}
-
-.item h2 {
-  margin-bottom: 0.5rem;
 }
 
 .card-container {

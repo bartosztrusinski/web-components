@@ -9,87 +9,93 @@
     <script defer src="components/ExpandingList/ExpandingList.js"></script>
     <script defer src="components/Card/Card.js"></script>
     <script defer src="components/DateAgo/DateAgo.js"></script>
+    <script defer src="components/Container/Container.js"></script>
+    <script defer src="components/Item/Item.js"></script>
   </head>
   <body>
-    <h1>Web Components</h1>
-    <div class="item">
-      <h2>Customized built in button</h2>
-      <button is="styled-btn">Click me!</button>
-    </div>
-    <div class="item">
-      <h2>Customized expanding list</h2>
-      <ul is="expanding-list">
-        <li>
-          UK
-          <ul>
-            <li style="--li-color: Chartreuse">
-              Yorkshire
+    <header class="header">
+      <h1 class="heading">Web Components</h1>
+    </header>
+    <main>
+      <content-container>
+        <item-container title="customized built in button">
+          <button is="styled-btn">Click me!</button>
+        </item-container>
+        <item-container title="customized expanding list">
+          <ul is="expanding-list">
+            <li>
+              UK
               <ul>
-                <li style="--li-color: LawnGreen">
-                  Leeds
+                <li style="--li-color: Chartreuse">
+                  Yorkshire
                   <ul>
-                    <li style="--li-color: Lime">Train station</li>
-                    <li style="--li-color: MediumSpringGreen">Town hall</li>
-                    <li style="--li-color: SpringGreen">Headrow</li>
+                    <li style="--li-color: LawnGreen">
+                      Leeds
+                      <ul>
+                        <li style="--li-color: Lime">Train station</li>
+                        <li style="--li-color: MediumSpringGreen">Town hall</li>
+                        <li style="--li-color: SpringGreen">Headrow</li>
+                      </ul>
+                    </li>
+                    <li style="--li-color: MediumAquamarine">Bradford</li>
+                    <li style="--li-color: LightSeaGreen">Hull</li>
                   </ul>
                 </li>
-                <li style="--li-color: MediumAquamarine">Bradford</li>
-                <li style="--li-color: LightSeaGreen">Hull</li>
               </ul>
             </li>
-          </ul>
-        </li>
-        <li>
-          USA
-          <ul>
-            <li style="--li-color: HotPink">Nevada</li>
-            <li style="--li-color: Fuchsia">
-              California
+            <li>
+              USA
               <ul>
-                <li style="--li-color: Magenta">Los Angeles</li>
-                <li style="--li-color: MediumOrchid">San Francisco</li>
-                <li style="--li-color: MediumPurple">Berkeley</li>
+                <li style="--li-color: HotPink">Nevada</li>
+                <li style="--li-color: Fuchsia">
+                  California
+                  <ul>
+                    <li style="--li-color: Magenta">Los Angeles</li>
+                    <li style="--li-color: MediumOrchid">San Francisco</li>
+                    <li style="--li-color: MediumPurple">Berkeley</li>
+                  </ul>
+                </li>
+                <li style="--li-color: BlueViolet">Oregon</li>
               </ul>
             </li>
-            <li style="--li-color: BlueViolet">Oregon</li>
           </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="item">
-      <h2>Automonous card using template & slot</h2>
-      <div class="card-container">
-        <custom-card>
-          <img
-            slot="card-image"
-            src="img/components.png"
-            alt="creating components" />
-          <h3 slot="card-heading">Custom Component</h3>
-          <p slot="card-description">
-            Card component made using template and slot elements with shadow DOM
-            and Web Components API.
-          </p>
-          <button slot="card-action" type="button">Show more</button>
-          <button slot="card-action" type="button">Click me</button>
-        </custom-card>
-        <custom-card>
-          <img
-            slot="card-image"
-            src="img/skyline.jpg"
-            alt="nissan skyline on highway" />
-          <h3 slot="card-heading">Nissan Skyline R34 GTR</h3>
-          <p slot="card-description">
-            This car is considered an icon of the 90s and early 2000s. The R34
-            was the first Skyline to feature the legendary RB26DETT engine.
-            Combined with twin turbos and all wheel drive, this car is a beast.
-          </p>
-        </custom-card>
-        <custom-card></custom-card>
-      </div>
-    </div>
-    <div class="item">
-      <h2>Custom element which tells you relative time</h2>
-      <date-ago date="2020-06-05 15:00 UTC"></date-ago>
-    </div>
+        </item-container>
+        <item-container title="automonous card using template and slot">
+          <div class="card-container">
+            <custom-card>
+              <img
+                slot="card-image"
+                src="img/components.png"
+                alt="creating components" />
+              <h3 slot="card-heading">Custom Component</h3>
+              <p slot="card-description">
+                Card component made using template and slot elements with shadow
+                DOM and Web Components API.
+              </p>
+              <button slot="card-action" type="button">Show more</button>
+              <button slot="card-action" type="button">Click me</button>
+            </custom-card>
+            <custom-card>
+              <img
+                slot="card-image"
+                src="img/skyline.jpg"
+                alt="nissan skyline on highway" />
+              <h3 slot="card-heading">Nissan Skyline R34 GTR</h3>
+              <p slot="card-description">
+                This car is considered an icon of the 90s and early 2000s. The
+                R34 was the first Skyline to feature the legendary RB26DETT
+                engine. Combined with twin turbos and all wheel drive, this car
+                is a beast.
+              </p>
+            </custom-card>
+            <custom-card></custom-card>
+          </div>
+        </item-container>
+        <item-container
+          title="custom element that tells you how long ago the date was">
+          <date-ago date="2020-08-05 15:00 UTC"></date-ago>
+        </item-container>
+      </content-container>
+    </main>
   </body>
 </html>

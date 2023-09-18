@@ -63,6 +63,7 @@
 
 .action button,
 .action::slotted(button) {
+  font-family: inherit;
   padding: 0.8rem 0.5rem;
   border-radius: 0.8rem;
   background-color: hsl(219, 92%, 46%);
